@@ -197,7 +197,7 @@ class UploadRequest(S3Request):
         else:
             expires = expires
 
-        return "max-age=%d" % self._get_total_seconds(expires) + ', public' if self.public else ''
+        return "max-age=%d" % self._get_total_seconds(expires) + (', public' if self.public else '')
 
     def _get_total_seconds(self, timedelta):
         """
